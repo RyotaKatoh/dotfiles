@@ -67,3 +67,6 @@ end
 function tz
 	totsuzen $argv
 end
+
+# haskell
+set PATH ~/.local/bin $PATH
