@@ -70,3 +70,10 @@ end
 
 # haskell
 set PATH ~/.local/bin $PATH
+
+# mail config
+if test -f ~/.MAILERKEY;
+        cat ~/.MAILERKEY | while read line;
+                eval (echo $line)
+        end
+end
