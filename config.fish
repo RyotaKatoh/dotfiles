@@ -12,7 +12,7 @@ set -gx LC_ALL ja_JP.UTF-8
 set -gx LANG en_US.UTF-8
 
 # ls colors
-set -Ux LSCOLORS cxfxcxdxbxegedabagacad 
+set -Ux LSCOLORS cxfxcxdxbxegedabagacad
 
 # python
 alias ip="~/.pyenv/versions/2.7.10/bin/frameworkpython -m IPython"
@@ -20,6 +20,7 @@ alias ip="~/.pyenv/versions/2.7.10/bin/frameworkpython -m IPython"
 # golang
 set -x GOPATH ~/golang
 set PATH $GOPATH/bin $PATH
+set GO_WORKING_DIR $GOPATH/src/github.com/RyotaKatoh/
 
 # CFLAGS
 set -gx CFLAGS -I(xcrun --show-sdk-path)/usr/include
@@ -56,7 +57,7 @@ function gc
 end
 
 function gco
-	git checkout $argv 
+	git checkout $argv
 end
 
 function gb
