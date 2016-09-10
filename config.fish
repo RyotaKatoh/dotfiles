@@ -39,6 +39,8 @@ if test -f ~/.AWSKEY;
 	end
 end
 
+# docker
+alias docker_clean="docker rm -v (docker ps -aq -f status=exited)"
 
 # NVM
 set -gx NVM_DIR (brew --prefix nvm)
