@@ -78,3 +78,8 @@ if test -f ~/.MAILERKEY;
                 eval (echo $line)
         end
 end
+
+# CUDA
+set -gx CUDA_HOME /Developer/NVIDIA/CUDA-7.5
+set -gx DYLD_LIBRARY_PATH $CUDA_HOME/lib:/usr/local/cuda/lib
+set -gx PATH $CUDA_HOME/bin $PATH
