@@ -25,10 +25,6 @@ set GO_WORKING_DIR $GOPATH/src/github.com/RyotaKatoh/
 # CFLAGS
 set -gx CFLAGS -I(xcrun --show-sdk-path)/usr/include
 
-# Spark
-set -gx IPYTHON 1
-alias spark "~/spark-1.5.2-bin-hadoop2.6/bin/pyspark"
-
 # Xcode
 alias xcode="open -a Xcode"
 
