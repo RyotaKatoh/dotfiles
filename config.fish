@@ -81,7 +81,11 @@ if test -f ~/.MAILERKEY;
         end
 end
 
+# DYLD_LIBRARY_PATH
+set -x DYLD_FALLBACK_LIBRARY_PATH $HOME/anaconda/lib $DYLD_FALLBACK_LIBRARY_PATH
+
 # CUDA
 set -gx CUDA_HOME /Developer/NVIDIA/CUDA-7.5
-set -gx DYLD_LIBRARY_PATH $CUDA_HOME/lib:/usr/local/cuda/lib
+set -gx DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH:$CUDA_HOME/lib:/usr/local/cuda/lib:
 set -gx PATH $CUDA_HOME/bin $PATH
+
