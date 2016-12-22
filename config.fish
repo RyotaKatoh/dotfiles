@@ -85,3 +85,5 @@ set -gx CUDA_HOME /Developer/NVIDIA/CUDA-7.5
 set -gx DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH:$CUDA_HOME/lib:/usr/local/cuda/lib:
 set -gx PATH $CUDA_HOME/bin $PATH
 
+# spark
+set -e IPYTHON # this line is soooo fuck
