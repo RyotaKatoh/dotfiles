@@ -37,6 +37,10 @@ if dein#load_state('/Users/RyotaKatoh/.vim/bundles')
   " You can specify revision/branch/tag.
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
+  " My plugins
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('fatih/vim-go')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -52,3 +56,13 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+
+" NERDTree-------------------------
+nnoremap <silent><C-e> :NERDTreeFocusToggle<CR>
+
+" display nerdtree in default
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" if all tabs are closed, NERDTree is also closed.
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"End NERDTree-------------------------
