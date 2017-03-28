@@ -86,4 +86,13 @@ set -gx DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH:$CUDA_HOME/lib:/usr/local/cuda/lib:
 set -gx PATH $CUDA_HOME/bin $PATH
 
 # spark
-set -e IPYTHON # this line is soooo fuck
+set -gx PYSPARK_DRIVER_PYTHON ipython
+
+# nginx deploy
+alias fab_nginx="docker run --rm -it -v '$PWD:/app' -v '$HOME/.ssh:/root/.ssh' -v '$HOME/.aws:/root/.aws' enm10k/docker-fabric-toolkit fab"
+
+# octave
+alias octave="docker run --rm -it -v (pwd):/source schickling/octave"
+
+# luigi
+alias run_luigi="docker run -v $PWD:/etc/luigi --name luigi axiom/docker-luigi"
