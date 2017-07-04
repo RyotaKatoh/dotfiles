@@ -96,3 +96,6 @@ alias octave="docker run --rm -it -v (pwd):/source schickling/octave"
 
 # luigi
 alias run_luigi="docker run -v $PWD:/etc/luigi --name luigi axiom/docker-luigi"
+
+# rust
+set PATH $HOME/.cargo/env $PATH
