@@ -40,6 +40,8 @@ alias docker_clean="docker rm -v (docker ps -aq -f status=exited)"
 
 # NVM
 set -gx NVM_DIR (brew --prefix nvm)
+# nodebrew
+set PATH $HOME/.nodebrew/current/bin $PATH
 
 # git shortcuts
 function gs
