@@ -95,4 +95,15 @@ alias fab_nginx="docker run --rm -it -v '$PWD:/app' -v '$HOME/.ssh:/root/.ssh' -
 alias octave="docker run --rm -it -v (pwd):/source schickling/octave"
 
 # luigi
-alias run_luigi="docker run -v $PWD:/etc/luigi --name luigi axiom/docker-luigi"
+alias run_luigi="docker run -v $PWD:/etc/luigi -p 8082:8082 axiom/docker-luigi"
+
+# grpc
+set PATH /etc/protoc-3.3.0-osx-x86_64/bin/ $PATH
+
+# mapbox token
+if test -f ~/.MAPBOX_TOKEN;
+        cat ~/.MAPBOX_TOKEN | while read line;
+                eval (echo $line)
+        end
+end
+
