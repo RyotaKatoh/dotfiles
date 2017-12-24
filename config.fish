@@ -115,3 +115,6 @@ end
 
 # rust
 set PATH $HOME/.cargo/bin $PATH
+
+# tmux
+alias tcp="tmux save-buffer - | reattach-to-user-namespace pbcopy"
