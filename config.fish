@@ -72,13 +72,6 @@ end
 # haskell
 set PATH ~/.local/bin $PATH
 
-# mail config
-if test -f ~/.MAILERKEY;
-        cat ~/.MAILERKEY | while read line;
-                eval (echo $line)
-        end
-end
-
 # DYLD_LIBRARY_PATH
 set -x DYLD_FALLBACK_LIBRARY_PATH $HOME/anaconda/lib $DYLD_FALLBACK_LIBRARY_PATH
 
@@ -120,3 +113,12 @@ set PATH $HOME/.cargo/bin $PATH
 
 # tmux
 alias tcp="tmux save-buffer - | reattach-to-user-namespace pbcopy"
+
+# android studio
+set PATH $HOME/Library/Android/sdk/platform-tools/ $PATH
+
+# clean up git branch
+alias git_clearn="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs -I % git branch -d %"
+
+# setup for developing inside
+alias nvm_inside="nvm use --delete-prefix v8.11.3"
