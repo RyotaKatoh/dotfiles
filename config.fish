@@ -77,9 +77,11 @@ set PATH ~/.local/bin $PATH
 set -x DYLD_FALLBACK_LIBRARY_PATH $HOME/anaconda/lib $DYLD_FALLBACK_LIBRARY_PATH
 
 # CUDA
-set -gx CUDA_HOME /Developer/NVIDIA/CUDA-7.5
-set -gx DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH:$CUDA_HOME/lib:/usr/local/cuda/lib:
-set -gx PATH $CUDA_HOME/bin $PATH
+if test -f /Developer/NVIDIA;
+	set -gx CUDA_HOME /Developer/NVIDIA/CUDA-7.5
+	set -gx DYLD_LIBRARY_PATH $DYLD_LIBRARY_PATH:$CUDA_HOME/lib:/usr/local/cuda/lib:
+	set -gx PATH $CUDA_HOME/bin $PATH
+end
 
 # spark
 set -gx PYSPARK_DRIVER_PYTHON ipython
@@ -109,9 +111,6 @@ function code
   open -n -b "com.microsoft.VSCode" --args $location
 end
 
-# rust
-set PATH $HOME/.cargo/bin $PATH
-
 # tmux
 alias tcp="tmux save-buffer - | reattach-to-user-namespace pbcopy"
 
@@ -119,7 +118,4 @@ alias tcp="tmux save-buffer - | reattach-to-user-namespace pbcopy"
 set PATH $HOME/Library/Android/sdk/platform-tools/ $PATH
 
 # clean up git branch
-alias git_clearn="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs -I % git branch -d %"
-
-# setup for developing inside
-alias nvm_inside="nvm use --delete-prefix v8.11.3"
+alias git_clean="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs -I % git branch -d %"
