@@ -119,3 +119,7 @@ set PATH $HOME/Library/Android/sdk/platform-tools/ $PATH
 
 # clean up git branch
 alias git_clean="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs -I % git branch -d %"
+
+# direnv
+eval (direnv hook fish)
+set -gx EDITOR vim
