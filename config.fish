@@ -123,3 +123,6 @@ alias git_clean="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs
 # direnv
 eval (direnv hook fish)
 set -gx EDITOR vim
+
+# rust
+eval (source $HOME/.cargo/env)
