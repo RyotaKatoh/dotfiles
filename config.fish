@@ -124,5 +124,8 @@ alias git_clean="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs
 eval (direnv hook fish)
 set -gx EDITOR vim
 
+# SSL CERT
+set SSL_CERT_FILE $HOME/.ca/cafile.pem
+
 # rust
 eval (source $HOME/.cargo/env)
