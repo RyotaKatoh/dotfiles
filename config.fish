@@ -126,6 +126,8 @@ set -gx EDITOR vim
 
 # SSL CERT
 set SSL_CERT_FILE $HOME/.ca/cafile.pem
+set CA_CERT $SSL_CERT_FILE
+set CURL_CA_BUNDLE $SSL_CERT_FILE
 
 # rust
 eval (source $HOME/.cargo/env)
