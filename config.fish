@@ -125,9 +125,15 @@ eval (direnv hook fish)
 set -gx EDITOR vim
 
 # SSL CERT
-set SSL_CERT_FILE $HOME/.ca/cafile.pem
-set CA_CERT $SSL_CERT_FILE
-set CURL_CA_BUNDLE $SSL_CERT_FILE
+export SSL_CERT_FILE=$HOME/.ca/cafile.pem
+export CA_CERT=$SSL_CERT_FILE
+export CURL_CA_BUNDLE=$SSL_CERT_FILE
+export REQUESTS_CA_BUNDLE=$SSL_CERT_FILE
 
 # rust
 eval (source $HOME/.cargo/env)
+
+# yubikey
+export GPG_TTY=(tty)
+export SSH_AUTH_SOCK=(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
