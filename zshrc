@@ -42,7 +42,7 @@ ZSH_THEME="miloshadzic"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -73,6 +73,19 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+autoload -Uz colors
+colors
+
+autoload -Uz compinit
+compinit
+
+if [ -x /usr/bin/dircolors ]; then
+	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+	alias ls='ls --color=auto'
+	alias grep='grep --color=auto'
+	alias fgres='fgrep --color=auto'
+	alias egrep='egrep -- color=auto'
+fi
 
 # Go
 export PATH=$PATH:/usr/local/go/bin
