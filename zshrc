@@ -74,7 +74,18 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+# Go
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
+# docker for windows
+if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
+	export DOCKER_HOST=tcp://localhost:2375
+fi
+
+# anaconda
+export PATH=$PATH:$HOME/anaconda3/bin
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
