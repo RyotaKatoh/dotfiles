@@ -100,6 +100,9 @@ fi
 # anaconda
 export PATH=$PATH:$HOME/anaconda3/bin
 
+# direnv
+eval "$(direnv hook zsh)"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
