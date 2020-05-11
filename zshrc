@@ -103,6 +103,10 @@ export PATH=$PATH:$HOME/anaconda3/bin
 # pipenv
 eval "$(pipenv --completion)"
 
+# direnv
+eval "$(direnv hook zsh)"
+export EDITOR=vim
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
