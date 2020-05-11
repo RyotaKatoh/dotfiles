@@ -100,6 +100,9 @@ fi
 # anaconda
 export PATH=$PATH:$HOME/anaconda3/bin
 
+# pipenv
+eval "$(pipenv --completion)"
+
 # direnv
 eval "$(direnv hook zsh)"
 export EDITOR=vim
