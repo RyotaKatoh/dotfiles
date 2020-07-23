@@ -103,7 +103,7 @@ eval "$(direnv hook zsh)"
 export EDITOR=vim
 
 # Rust
-if [ -x $HOME/.cargo/env ]; then
+if [ -r $HOME/.cargo/env ]; then
 	export PATH=$PATH:$HOME/.cargo/bin
 fi
 
