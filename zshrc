@@ -92,11 +92,6 @@ export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# docker for windows
-if [ -f /proc/sys/fs/binfmt_misc/WSLInterop ]; then
-	export DOCKER_HOST=tcp://localhost:2375
-fi
-
 # anaconda
 export PATH=$PATH:$HOME/anaconda3/bin
 
@@ -114,6 +109,11 @@ alias git_clean="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# Rust
+if [ -r $HOME/.cargo/env ]; then
+	export PATH=$PATH:$HOME/.cargo/bin
+fi
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
