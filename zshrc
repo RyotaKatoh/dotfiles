@@ -102,6 +102,14 @@ eval "$(pipenv --completion)"
 eval "$(direnv hook zsh)"
 export EDITOR=vim
 
+# git_cleaner
+alias git_clean="git branch --merged | grep -vE '^\*|master\$|develop\$' | xargs -I % git branch -d %"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # Rust
 if [ -r $HOME/.cargo/env ]; then
 	export PATH=$PATH:$HOME/.cargo/bin
@@ -128,3 +136,9 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '$HOME/misc/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '$HOME/misc/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '$HOME/misc/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '$HOME/misc/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
