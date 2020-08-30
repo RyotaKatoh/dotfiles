@@ -70,13 +70,30 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
   " My plugins
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('fatih/vim-go')
+	" Nerdtree
+	call dein#add('scrooloose/nerdtree')
+	call dein#add('ryanoasis/vim-devicons')
+	
+	" development plugins
+	call dein#add('tpope/vim-fugitive')
+	call dein#add('tpope/vim-commentary')
+	call dein#add('nathanaelkane/vim-indent-guides')
+	
+	" auto complete
+	call dein#add('davidhalter/jedi-vim')
+
+	" visual plugins
 	call dein#add('scrooloose/syntastic')
-	call dein#add('tell-k/vim-autopep8')
 	call dein#add('vim-airline/vim-airline')  
 	call dein#add('vim-airline/vim-airline-themes')
-	call dein#add('tpope/vim-fugitive')
+	call dein#add('sheerun/vim-polyglot')
+
+	" python
+	call dein#add('tell-k/vim-autopep8')
+
+	" Go
+	call dein#add('fatih/vim-go')
+	
 
 	" Required:
   call dein#end()
@@ -91,6 +108,7 @@ if dein#check_install()
   call dein#install()
 endif
 
+call map(dein#check_clean(), "delete(v:val, 'rf')")
 "End dein Scripts-------------------------
 
 " NERDTree-------------------------
@@ -112,3 +130,13 @@ let g:syntastic_python_checkers = ['pyflakes', 'pep8']
 " Autopep8
 let g:autopep8_on_save = 1
 let g:autopep8_disable_show_diff=1
+
+" syntax highlight
+let g:python_highlight_all = 1
+
+" Golang
+let g:go_fmt_autosave = 1
+let g:go_fmt_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
