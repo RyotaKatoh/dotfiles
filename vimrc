@@ -74,7 +74,10 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('fatih/vim-go')
 	call dein#add('scrooloose/syntastic')
 	call dein#add('tell-k/vim-autopep8')
- 
+	call dein#add('vim-airline/vim-airline')  
+	call dein#add('vim-airline/vim-airline-themes')
+	call dein#add('tpope/vim-fugitive')
+
 	" Required:
   call dein#end()
   call dein#save_state()
@@ -99,6 +102,9 @@ let g:nerdtree_tabs_open_on_console_startup=1
 " if all tabs are closed, NERDTree is also closed.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "End NERDTree-------------------------
+
+" vim-airline
+let g:airline_theme='luna'
 
 " Syntastic
 let g:syntastic_python_checkers = ['pyflakes', 'pep8']
