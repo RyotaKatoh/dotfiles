@@ -70,29 +70,29 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
 
   " My plugins
-	" Nerdtree
-	call dein#add('scrooloose/nerdtree')
-	call dein#add('ryanoasis/vim-devicons')
-	
-	" development plugins
-	call dein#add('tpope/vim-fugitive')
-	call dein#add('tpope/vim-commentary')
-	call dein#add('nathanaelkane/vim-indent-guides')
-	
-	" auto complete
-	call dein#add('davidhalter/jedi-vim')
+  " Nerdtree
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('ryanoasis/vim-devicons')
 
-	" visual plugins
-	call dein#add('scrooloose/syntastic')
-	call dein#add('vim-airline/vim-airline')  
-	call dein#add('vim-airline/vim-airline-themes')
-	call dein#add('sheerun/vim-polyglot')
+  " development plugins
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('nathanaelkane/vim-indent-guides')
 
-	" python
-	call dein#add('tell-k/vim-autopep8')
+  " auto complete
+  call dein#add('davidhalter/jedi-vim')
 
-	" Go
-	call dein#add('fatih/vim-go')
+  " visual plugins
+  call dein#add('scrooloose/syntastic')
+  call dein#add('vim-airline/vim-airline')  
+  call dein#add('vim-airline/vim-airline-themes')
+  call dein#add('sheerun/vim-polyglot')
+
+  " python
+  call dein#add('tell-k/vim-autopep8')
+
+  " Go
+  call dein#add('fatih/vim-go')
 	
 
 	" Required:
