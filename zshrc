@@ -115,6 +115,9 @@ if [ -r $HOME/.cargo/env ]; then
 	export PATH=$PATH:$HOME/.cargo/bin
 fi
 
+# node
+export PATH="$HOME/.nodebrew/current/bin:$PATH"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
