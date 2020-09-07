@@ -93,7 +93,9 @@ if dein#load_state('$HOME/.vim/dein')
 
   " Go
   call dein#add('fatih/vim-go')
-	
+
+	" TypeScript
+	call dein#add('Quramy/tsuquyomi')
 
 	" Required:
   call dein#end()
@@ -132,6 +134,12 @@ let g:autopep8_on_save = 1
 let g:autopep8_disable_show_diff=1
 
 " syntax highlight
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:python_highlight_all = 1
 
 " Golang
@@ -140,3 +148,7 @@ let g:go_fmt_highlight_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
+
+" TypeScript
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
