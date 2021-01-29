@@ -118,6 +118,9 @@ fi
 # node
 export PATH="$HOME/.nodebrew/current/bin:$PATH"
 
+# kubernetes
+alias k="kubectl"
+
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
