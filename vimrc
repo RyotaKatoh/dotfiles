@@ -143,6 +143,8 @@ let g:syntastic_check_on_open = 1
 let g:python_highlight_all = 1
 
 " Golang
+let g:g_fmt_command = "goimports"
+let g:go_metalinter_autosave = 1
 let g:go_fmt_autosave = 1
 let g:go_fmt_highlight_types = 1
 let g:go_highlight_fields = 1
